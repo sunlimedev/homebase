@@ -1,0 +1,15 @@
+[Unit]
+Description=Chromium Kiosk Mode Runner
+After=homebase.service
+
+[Service]
+Type=simple
+User=user
+Group=user
+Environment=DISPLAY=:0
+ExecStart=/bin/bash /home/user/kiosk.sh
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
